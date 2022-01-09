@@ -15,6 +15,6 @@ class Schedule < ApplicationRecord
 
   def start_end_check
     errors.add(:end_day, "は開始日より前の日付は指定できません。") unless
-    self.start < self.end_day
+    self.start < self.end_day || self.start = self.end_day
     end
 end
